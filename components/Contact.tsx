@@ -241,7 +241,7 @@ export default function Contact() {
                   <path d="M3.5 5.5V3.8a2 2 0 014 0v1.7"></path>
                 </svg>
                 <span style={{ overflow: "hidden", textOverflow: "ellipsis" }}>
-                  Start a project with Zorvia
+                  Start a project with Zorqia
                 </span>
               </div>
             </div>
@@ -480,8 +480,8 @@ export default function Contact() {
             color: "#AEBAD3",
           }}
         >
-          <span>Zorvia</span>
-          <span>© 2026 Zorvia. All rights reserved.</span>
+          <span>Zorqia</span>
+          <span>© 2026 Zorqia. All rights reserved.</span>
         </div>
       </div>
     </section>

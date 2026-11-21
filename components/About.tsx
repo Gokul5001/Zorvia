@@ -35,7 +35,7 @@ export default function About() {
             Start to finish, one point of contact
           </h2>
           <p style={{ margin: "0", color: "#44506A", maxWidth: "560px" }}>
-            Zorvia is a web studio for service businesses. We have more than two
+            Zorqia is a web studio for service businesses. We have more than two
             years of experience building production websites, apps and AI
             features, including a healthcare platform and a travel booking
             platform.

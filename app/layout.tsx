@@ -17,9 +17,9 @@ const body = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Zorvia",
+  title: "Zorqia",
   description:
-    "Zorvia is a web studio that designs, builds and launches websites for service businesses.",
+    "Zorqia is a web studio that designs, builds and launches websites for service businesses.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -1,4 +1,4 @@
-# Zorvia – Next.js landing page
+# Zorqia – Next.js landing page
 
 Converted from the single-file HTML landing page (Next.js App Router + TypeScript).
 
