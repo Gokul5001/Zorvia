@@ -36,7 +36,7 @@ export default function Header() {
             strokeLinejoin="round"
           ></path>
         </svg>
-        Zorqia
+        Zorwia
       </a>
       <nav
         aria-label="Main"
