@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: "Zorwia",
   description:
     "Zorwia is a web studio that designs, builds and launches websites for service businesses.",
+  icons: {
+    icon: "/zorwia-logo.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

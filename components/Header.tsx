@@ -4,7 +4,7 @@ export default function Header() {
       style={{
         maxWidth: "1200px",
         margin: "0 auto",
-        padding: "20px 24px",
+        padding: "12px 24px",
         boxSizing: "border-box",
         display: "flex",
         flexWrap: "wrap",
@@ -25,18 +25,18 @@ export default function Header() {
           letterSpacing: "-0.02em",
         }}
       >
-        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
-          <rect width="34" height="34" rx="9" fill="#2447F5"></rect>
-          <path
-            d="M14 11l-6 6 6 6M20 11l6 6-6 6"
-            stroke="#ffffff"
-            strokeWidth="2.6"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          ></path>
-        </svg>
-        Zorwia
+        <img
+          src="/zorwia-logo.png"
+          alt="Zorwia IT Services"
+          width="82"
+          height="55"
+          style={{
+            width: "82px",
+            height: "55px",
+            objectFit: "contain",
+            display: "block",
+          }}
+        />
       </a>
       <nav
         aria-label="Main"

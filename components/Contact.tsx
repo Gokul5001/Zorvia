@@ -4,19 +4,56 @@ import { useState, type FormEvent } from "react";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
 
-  function submit(e: FormEvent<HTMLFormElement>) {
+  async function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const f = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const f = new FormData(form);
     const name = String(f.get("name") || "").trim();
-    // TODO: send `f` to your backend / email service here
-    setFirstName(name.split(" ")[0]);
-    setEmail(String(f.get("email") || "").trim());
-    setSent(true);
+    const emailAddress = String(f.get("email") || "").trim();
+    setSubmitting(true);
+    setError("");
+
+    try {
+      const response = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email: emailAddress,
+          phone: String(f.get("phone") || "").trim(),
+          need: String(f.get("need") || "").trim(),
+          message: String(f.get("message") || "").trim(),
+        }),
+      });
+      const result = await response.json().catch(() => null);
+
+      if (!response.ok) {
+        throw new Error(result?.error || "Unable to send your enquiry.");
+      }
+
+      setFirstName(name.split(" ")[0]);
+      setEmail(emailAddress);
+      setSent(true);
+      form.reset();
+    } catch (submitError) {
+      setError(
+        submitError instanceof Error
+          ? submitError.message
+          : "Unable to send your enquiry. Please try again.",
+      );
+    } finally {
+      setSubmitting(false);
+    }
   }
-  const again = () => setSent(false);
+  const again = () => {
+    setSent(false);
+    setError("");
+  };
 
   return (
     <section
@@ -383,6 +420,7 @@ export default function Contact() {
                   <button
                     className="btn"
                     type="submit"
+                    disabled={submitting}
                     style={{
                       background: "#2447F5",
                       color: "#ffffff",
@@ -393,8 +431,13 @@ export default function Contact() {
                       fontSize: "17px",
                     }}
                   >
-                    Send enquiry
+                    {submitting ? "Sending..." : "Send enquiry"}
                   </button>
+                  {error && (
+                    <p role="alert" style={{ margin: "0", color: "#B42318" }}>
+                      {error}
+                    </p>
+                  )}
                 </form>
               </>
             )}
