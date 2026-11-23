@@ -1,6 +1,7 @@
 export default function Hero() {
   return (
     <section
+      className="hero-section"
       style={{
         maxWidth: "1200px",
         margin: "0 auto",
@@ -13,6 +14,7 @@ export default function Hero() {
       }}
     >
       <div
+        className="hero-copy"
         style={{
             flex: "1 1 520px",
           minWidth: "0",
@@ -92,7 +94,7 @@ export default function Hero() {
         </p>
       </div>
 
-      <div style={{ flex: "1 1 400px", minWidth: "0" }}>
+      <div className="hero-preview" style={{ flex: "1 1 400px", minWidth: "0" }}>
         <div
           style={{
             background: "#ffffff",

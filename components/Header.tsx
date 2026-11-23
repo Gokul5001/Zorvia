@@ -15,6 +15,7 @@ export default function Header() {
     >
       <a
         href="#top"
+        className="brand-logo"
         style={{
           display: "flex",
           alignItems: "center",

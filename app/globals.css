@@ -65,6 +65,98 @@ button {
   cursor: pointer;
   border: 0;
 }
+.header-enter {
+  animation: headerEnter 700ms cubic-bezier(.22,1,.36,1) both;
+}
+.brand-logo {
+  transition: transform 220ms ease, filter 220ms ease;
+}
+.brand-logo:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 8px 12px rgba(36,71,245,.12));
+}
+.nl {
+  position: relative;
+  transition: color 180ms ease;
+}
+.nl::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 7px;
+  height: 2px;
+  border-radius: 999px;
+  background: #2447f5;
+  transition: right 220ms ease;
+}
+.nl:hover::after {
+  right: 0;
+}
+.btn,
+.btn2,
+.btnw,
+.navcta {
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+.btn:not(.navcta):hover,
+.btn2:hover,
+.btnw:hover,
+.navcta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(36,71,245,.18);
+}
+.proj {
+  transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease;
+}
+.proj:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 50px rgba(14,26,48,.12);
+}
+.reveal {
+  overflow: clip;
+}
+.reveal.reveal-ready {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 750ms cubic-bezier(.22,1,.36,1) var(--reveal-delay),
+    transform 750ms cubic-bezier(.22,1,.36,1) var(--reveal-delay);
+}
+.reveal.reveal-ready.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@keyframes headerEnter {
+  from { opacity: 0; transform: translateY(-14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-copy {
+  animation: heroCopyEnter 850ms 180ms cubic-bezier(.22,1,.36,1) both;
+}
+.hero-preview {
+  animation: heroPreviewEnter 900ms 320ms cubic-bezier(.22,1,.36,1) both;
+  will-change: transform;
+}
+.hero-preview > div {
+  animation: previewFloat 5s 1.3s ease-in-out infinite;
+}
+@keyframes heroEnter {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroCopyEnter {
+  from { opacity: 0; transform: translateX(-28px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes heroPreviewEnter {
+  from { opacity: 0; transform: translateX(28px) scale(.96); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+@keyframes previewFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
 .live {
   animation: pulse 2.2s ease-in-out infinite;
 }
@@ -110,6 +202,28 @@ button {
 @media (prefers-reduced-motion: reduce) {
   .live {
     animation: none;
+  }
+  .header-enter,
+  .hero-copy,
+  .hero-preview,
+  .hero-preview > div,
+  .reveal.reveal-ready,
+  .reveal.is-visible > section:first-child,
+  .reveal.is-visible > div:first-child {
+    animation: none !important;
+  }
+  .reveal.reveal-ready {
+    opacity: 1;
+    transform: none;
+  }
+  .brand-logo,
+  .nl::after,
+  .btn,
+  .btn2,
+  .btnw,
+  .navcta,
+  .proj {
+    transition: none;
   }
   html {
     scroll-behavior: auto;

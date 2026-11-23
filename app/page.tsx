@@ -8,6 +8,7 @@ import Pricing from "@/components/Pricing";
 import PortfolioPricing from "@/components/PortfolioPricing";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
+import Reveal from "@/components/Reveal";
 
 export default function Page() {
   return (
@@ -21,16 +22,16 @@ export default function Page() {
         lineHeight: "1.6",
       }}
     >
-      <Header />
+      <div className="header-enter"><Header /></div>
       <Hero />
-      <StackBand />
-      <Services />
-      <Process />
-      <Work />
-      <Pricing />
-      <PortfolioPricing />
-      <About />
-      <Contact />
+      <Reveal><StackBand /></Reveal>
+      <Reveal><Services /></Reveal>
+      <Reveal><Process /></Reveal>
+      <Reveal><Work /></Reveal>
+      <Reveal><Pricing /></Reveal>
+      <Reveal><PortfolioPricing /></Reveal>
+      <Reveal><About /></Reveal>
+      <Reveal><Contact /></Reveal>
     </div>
   );
 }
