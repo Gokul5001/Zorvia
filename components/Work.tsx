@@ -30,42 +30,6 @@ const websiteGroups = [
     ],
   },
   {
-    title: "Multi-page website",
-    subtitle: "Separate linked pages for each topic.",
-    projects: [
-      {
-        title: "ZeroMedixine",
-        domain: "zeromedixine.com",
-        url: "https://zeromedixine.com/",
-        category: "Zeromedixine",
-        description:
-          "A digital physiotherapy clinic with separate pages for clinics, blogs and health concerns, plus patient login and consultation booking.",
-        tags: ["Multi page", "Healthcare"],
-        banner: "#2996A2",
-        accent: "#FFFFFF",
-        subtitle: "Digital physiotherapy clinic",
-      },
-    ],
-  },
-  {
-    title: "E-commerce website",
-    subtitle: "Customers search, order and pay online.",
-    projects: [
-      {
-        title: "LemonTrip",
-        domain: "lemontrip.in",
-        url: "https://lemontrip.in/",
-        category: "LemonTrip",
-        description:
-          "A travel booking platform for flights, hotels, trains, buses, holidays and visas, with customer accounts, bookings and an AI trip planner.",
-        tags: ["E-commerce", "Travel"],
-        banner: "#174A53",
-        accent: "#FFD400",
-        subtitle: "Travel booking platform",
-      },
-    ],
-  },
-  {
     title: "Portfolio website",
     subtitle: "A personal site that shows a professional's work.",
     projects: [
@@ -80,18 +44,6 @@ const websiteGroups = [
         banner: "#171C38",
         accent: "#F0B95C",
         subtitle: "Graphic designer and digital marketer",
-      },
-      {
-        title: "Gokulkannan K H",
-        domain: "myportfolio2026-five.vercel.app",
-        url: "https://myportfolio2026-five.vercel.app/",
-        category: "Gokulkannan K H - My Portfolio",
-        description:
-          "A dark, animated personal portfolio for a full-stack engineer, with experience, projects and a light and dark switch.",
-        tags: ["Portfolio", "Personal project"],
-        banner: "#241F3F",
-        accent: "#D29BFF",
-        subtitle: "Full stack engineer",
       },
     ],
   },
@@ -144,16 +96,10 @@ export default function Work() {
         </p>
       </div>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "52px" }}>
-        <div className="top-project-grid">
-          {websiteGroups.slice(0, 3).map((group) => (
-            <WebsiteRow key={group.title} group={group} />
-          ))}
-        </div>
-        <div className="bottom-project-grid">
-          <WebsiteRow group={websiteGroups[3]} />
-          <WebsiteRow group={websiteGroups[4]} />
-        </div>
+      <div className="top-project-grid">
+        {websiteGroups.map((group) => (
+          <WebsiteRow key={group.title} group={group} />
+        ))}
       </div>
 
       <p
