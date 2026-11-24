@@ -15,7 +15,7 @@ export default function StackBand() {
         }}
       >
         <p style={{ margin: "0", fontWeight: "600", fontSize: "16px" }}>
-          Two websites delivered for a client in Saudi Arabia.
+          Professional and freelance experience across healthcare, travel and business websites.
         </p>
         <p
           style={{

@@ -523,7 +523,27 @@ export default function Contact() {
             color: "#AEBAD3",
           }}
         >
-          <span>Zorwia</span>
+          <a
+            href="#top"
+            aria-label="Zorwia home"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src="/zorwia-logo.png"
+              alt="Zorwia IT Services"
+              width="140"
+              height="94"
+              style={{
+                width: "140px",
+                height: "94px",
+                objectFit: "contain",
+                display: "block",
+              }}
+            />
+          </a>
           <span>© 2026 Zorwia. All rights reserved.</span>
         </div>
       </div>

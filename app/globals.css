@@ -34,10 +34,17 @@ a:focus-visible {
   background: #e6ecff !important;
 }
 .proj:hover {
-  border-color: #2447f5 !important;
+  border-color: rgba(36,71,245,.38) !important;
 }
 .tabwin:hover .ob {
   text-decoration: underline;
+}
+.proj-link {
+  transition: gap 180ms ease, opacity 180ms ease;
+}
+.proj-link:hover {
+  gap: 10px;
+  opacity: 0.78;
 }
 .fld {
   width: 100%;
@@ -175,6 +182,40 @@ button {
   grid-auto-flow: row dense;
   gap: 40px 24px;
 }
+.project-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.website-card-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  min-width: 0;
+}
+.portfolio-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.website-row-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+.top-project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+.bottom-project-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.proj {
+  min-height: 488px;
+}
 .span2 {
   grid-column: span 2;
 }
@@ -187,9 +228,27 @@ button {
   .g3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .top-project-grid,
+  .bottom-project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .bottom-project-grid > :first-child {
+    grid-column: 1 / -1;
+  }
 }
 @media (max-width: 640px) {
   .g3 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .project-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .top-project-grid,
+  .bottom-project-grid,
+  .portfolio-card-grid {
     grid-template-columns: minmax(0, 1fr);
   }
   .span2 {

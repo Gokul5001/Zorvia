@@ -86,11 +86,11 @@ export default function Hero() {
               border: "2px solid #B7C1D8",
             }}
           >
-            See delivered sites
+            See selected projects
           </a>
         </div>
         <p style={{ margin: "0", fontSize: "15px", color: "#44506A" }}>
-          Working with clients worldwide, fully remote.
+          Professional experience and freelance delivery, fully remote.
         </p>
       </div>
 
